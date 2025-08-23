@@ -3,7 +3,7 @@ name: Deploy Banking Bear
 on:
   push:
     branches:
-      - main   # change to master if that's your default
+      - main   # change to master if your repo default branch is master
 
 jobs:
   build:
@@ -19,19 +19,16 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        run: |
-          cd BANKING---BEAR-   # ✅ go into your actual project folder
-          npm install
+        run: npm install
 
       - name: Build project
-        run: |
-          cd BANKING---BEAR-
-          npm run build
+        run: npm run build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./BANKING---BEAR-/dist   # ✅ point to dist inside subfolder
+          publish_dir: ./dist
+
 
 
