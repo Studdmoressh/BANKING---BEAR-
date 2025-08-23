@@ -3,7 +3,7 @@ name: Deploy Banking Bear
 on:
   push:
     branches:
-      - main   # change to master if your repo default branch is master
+      - main   # change if your branch is called master
 
 jobs:
   build:
@@ -29,6 +29,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+
 
 
 
