@@ -1,8 +1,8 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// IMPORTANT for GitHub Pages: set base to your repo name
+// change "studmoressh" and "BANKING---BEAR" to your repo details if deploying with gh-pages
 export default defineConfig({
   plugins: [react()],
-  base: '/BANKING---BEAR-/',
+  base: '/banking-bear/'
 })
